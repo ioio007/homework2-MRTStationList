@@ -35,12 +35,36 @@ class MRTStationsListTableViewController: UITableViewController {
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
-
+        
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! MRTStationsListTableViewCell
+        
          //Configure the cell...
         let MRTStation = self.MRTstationsData.lines[indexPath.section].MRTStations[indexPath.row]
         
-        cell.textLabel?.text = MRTStation.name
+        cell.stationNameLabel.text = MRTStation.name
+        
+        if MRTStation.line.count == 1 {
+            // no 2 lines
+            cell.line2Label.hidden = true
+            print(cell.line1Label.hidden)
+            cell.line1Label.text = MRTStation.stationNumber[0]
+            cell.line1Label.textColor = UIColor.whiteColor()
+            cell.setLineLabelBackgroundColor(MRTStation.line[0], label: cell.line1Label)
+
+        }
+        else {
+            cell.line2Label.hidden = false
+            cell.line1Label.text = MRTStation.stationNumber[0]
+            cell.line2Label.text = MRTStation.stationNumber[1]
+            cell.line1Label.textColor = UIColor.whiteColor()
+            cell.line2Label.textColor = UIColor.whiteColor()
+            cell.setLineLabelBackgroundColor(MRTStation.line[0], label: cell.line1Label)
+            cell.setLineLabelBackgroundColor(MRTStation.line[1], label: cell.line2Label)
+            
+        }
+        
+
+        
 
         return cell
     }
@@ -55,23 +79,25 @@ class MRTStationsListTableViewController: UITableViewController {
         header.textLabel!.font = UIFont(name: "HelveticaNeue-Bold", size: 20)!
         
     }
+
+
     // MARK: - Segue
     
-//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//        guard let segueIdentifier = segue.identifier else {
-//            return
-//        }
-//        
-//        if segueIdentifier == "ShowDetail" {
-//            guard let detailViewController = segue.destinationViewController as? AirportDetailViewController else {
-//                return
-//            }
-//            guard let cell = sender as? UITableViewCell else { return }
-//            let indexPath = self.tableView.indexPathForCell(cell)!
-//            let airport = self.airportsData.countries[indexPath.section].airports[indexPath.row]
-//            detailViewController.airport = airport
-//        }
-//    }
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        guard let segueIdentifier = segue.identifier else {
+            return
+        }
+        
+        if segueIdentifier == "ShowDetail" {
+            guard let detailViewController = segue.destinationViewController as? MRTStationDetailViewController else {
+                return
+            }
+            guard let cell = sender as? UITableViewCell else { return }
+            let indexPath = self.tableView.indexPathForCell(cell)!
+            let MRTstation = self.MRTstationsData.lines[indexPath.section].MRTStations[indexPath.row]
+            detailViewController.MRTstation = MRTstation
+        }
+    }
 
 
 

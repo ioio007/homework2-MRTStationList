@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		773F2CE95EBFE94FBCFCDA68 /* Pods_homework2_MRTStationList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F333A7CA5281DDBA274D027 /* Pods_homework2_MRTStationList.framework */; };
+		7C36B11B1CDB73D600ADDE5C /* MRTStationsListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C36B11A1CDB73D600ADDE5C /* MRTStationsListTableViewCell.swift */; };
 		7CE66F161CD5AA2F00D81B64 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE66F151CD5AA2F00D81B64 /* AppDelegate.swift */; };
 		7CE66F181CD5AA2F00D81B64 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE66F171CD5AA2F00D81B64 /* ViewController.swift */; };
 		7CE66F1B1CD5AA2F00D81B64 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CE66F191CD5AA2F00D81B64 /* Main.storyboard */; };
@@ -22,6 +23,7 @@
 /* Begin PBXFileReference section */
 		2FDF53FA1BDCC6804A6607FC /* Pods-homework2-MRTStationList.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-homework2-MRTStationList.release.xcconfig"; path = "Pods/Target Support Files/Pods-homework2-MRTStationList/Pods-homework2-MRTStationList.release.xcconfig"; sourceTree = "<group>"; };
 		5F333A7CA5281DDBA274D027 /* Pods_homework2_MRTStationList.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_homework2_MRTStationList.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7C36B11A1CDB73D600ADDE5C /* MRTStationsListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MRTStationsListTableViewCell.swift; sourceTree = "<group>"; };
 		7CE66F121CD5AA2F00D81B64 /* homework2-MRTStationList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "homework2-MRTStationList.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CE66F151CD5AA2F00D81B64 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7CE66F171CD5AA2F00D81B64 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 				7CE66F2E1CD5E98E00D81B64 /* MRTStationsData.swift */,
 				7CE66F321CD5F74E00D81B64 /* MRTStationsListTableViewController.swift */,
 				7CE66F341CD5FAA900D81B64 /* MRTStationDetailViewController.swift */,
+				7C36B11A1CDB73D600ADDE5C /* MRTStationsListTableViewCell.swift */,
 			);
 			path = "homework2-MRTStationList";
 			sourceTree = "<group>";
@@ -232,6 +235,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C36B11B1CDB73D600ADDE5C /* MRTStationsListTableViewCell.swift in Sources */,
 				7CE66F181CD5AA2F00D81B64 /* ViewController.swift in Sources */,
 				7CE66F351CD5FAA900D81B64 /* MRTStationDetailViewController.swift in Sources */,
 				7CE66F2F1CD5E98E00D81B64 /* MRTStationsData.swift in Sources */,
